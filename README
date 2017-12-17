@@ -1,0 +1,33 @@
+Introduction
+======
+This is an implementation of the Minhash algorithm as descibed 
+in chapter 3 of Mining Massive Datasets ( http://infolab.stanford.edu/~ullman/mmds/ch3.pdf ).
+
+Implementation is inspired from the python repository https://github.com/ekzhu/datasketch .
+
+Usage
+=====
+Please see the example folder
+
+There is also a naive benchmark between the datasketch python and this
+Implementation
+
+Go:
+----
+Similar: %f and Took %s 1 21.876983ms
+Python:
+----
+Similar %f and Took %f ms 1.0 668.7448024749756
+
+This around 33 times faster
+
+Ofcourse this is not to compare python with go, I was just curious
+
+
+TODO
+====
+
+- Add documentation comments
+- Implementation of LSH
+- Implementation of the SuperMinhash algorithm as defined https://arxiv.org/pdf/1706.05698.pdf
+- Maybe parallelize the computation
