@@ -32,7 +32,7 @@ type minhash struct {
 }
 
 func NewPermutations(size int, seed int64) *permutations {
-	p := &permutations{}
+	p := permutations{}
 	p.size = size
 	p.seed = seed
 	p.values = make([]permutation, size)
@@ -41,14 +41,14 @@ func NewPermutations(size int, seed int64) *permutations {
 		p.values[i] = permutation{random(uint64(1), mersennePrime),
 			random(uint64(0), mersennePrime)}
 	}
-	return p
+	return &p
 }
 
 func NewMinhash(permutations *permutations) *minhash {
-	m := &minhash{}
+	m := minhash{}
 	m.permutations = permutations
 	m.initHashvalues()
-	return m
+	return &m
 }
 
 func (m *minhash) Hashvalues() []uint64 {
